@@ -1,0 +1,50 @@
+package com.fan.okhttp;
+
+import java.util.HashMap;
+import java.util.Map;
+
+/**
+ * Created by Lenovo on 2018/5/4.
+ */
+
+public class Response {
+
+    int code;
+    int contentLength = -1;
+    Map<String,String> map = new HashMap<>();
+
+    String body;
+    //保持连接
+    boolean isKeepAlive;
+
+    public Response() {
+    }
+
+    public Response(int code, int contentLength, Map<String, String> map, String body, boolean isKeepAlive) {
+        this.code = code;
+        this.contentLength = contentLength;
+        this.map = map;
+        this.body = body;
+        this.isKeepAlive = isKeepAlive;
+    }
+
+    public int getCode() {
+        return code;
+    }
+
+    public int getContentLength() {
+        return contentLength;
+    }
+
+    public Map<String, String> getMap() {
+        return map;
+    }
+
+    public String getBody() {
+        return body;
+    }
+
+    public boolean isKeepAlive() {
+        return isKeepAlive;
+    }
+}
